@@ -20,9 +20,8 @@ Script printing Rotten Tomatoes rating and movie title
   1. Build docker image:
      - run script build_image.sh:
        ./build_image.sh
-  2. run application - run bash scripts with parameters (script passing all parameters into a movie_information.py script) this script helping us to run all things without running docker commends, but you can also do the clean run using docker
-     ex. ./movie_information.sh <movie_name> [--apikey APIKEY]
-    ./movie_information.sh mask
-    ./movie_information.sh -h
-    ./movie_information.sh Avengers --apikey "513d7fc9"
-
+  2. run application - run docker command with parameters (docker passing all parameters into a movie_information.py script). Below few examples of execution: <br />
+    docker run <movie_name> [--apikey APIKEY] <br />
+    docker run alabaster:1.0 mask <br />
+    docker run alabaster:1.0 -h <br />
+    docker run alabaster:1.0 Avengers --apikey "513d7fc9" <br />

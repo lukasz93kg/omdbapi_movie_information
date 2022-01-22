@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 image_name="alabaster:1.0"
-pushd docker_environment
-  docker build -t "${image_name}" .
-popd
+
+docker build -f docker_environment/Dockerfile -t "${image_name}" .
 
