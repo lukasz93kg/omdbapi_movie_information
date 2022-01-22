@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from modules.omdbapi import Omdbapi
 import argparse
 
@@ -17,8 +18,6 @@ def main():
     else:
         my_movie = Omdbapi(movie_name)
     my_movie.print_property("Title")
-    my_movie.print_property("Ratings", "Internet Movie Database", "Rotten Tomatoes")
-    my_movie._print_property("Ratings")
-
+    my_movie.print_property("Ratings")
 
 main()

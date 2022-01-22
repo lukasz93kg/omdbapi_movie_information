@@ -55,7 +55,7 @@ class Omdbapi():
             if rating_property['Source'] in rating_names:
                 rating_properties[rating_property["Source"]] = rating_property["Value"]
         if not rating_properties:
-            print("Any of following properties was not found for rating names {}".format(rating_names))
+            print("No values was found for rating names {}".format(rating_names))
         return rating_properties
 
     def _print_rating_information(self, *rating_names: List[str]) -> None:
@@ -66,7 +66,10 @@ class Omdbapi():
                 rating_names - This parameter working only for property name Ratings
                 rating_names (List[str]): Name of choosen ex. (Internet Movie Database, Metacritic) rating from omdbapi (default: Rotten Tomatoes)
         '''
-        rating_properties = self.get_ratings_property([*rating_names])
+        if rating_names:
+            rating_properties = self.get_ratings_property([*rating_names])
+        else:
+            rating_properties = self.get_ratings_property()
         for rating_name, rating_value in rating_properties.items():
             print(self.__key_value_print_format.format(rating_name, rating_value))
  
@@ -92,7 +95,10 @@ class Omdbapi():
                 rating_names (List[str]): Name of choosen ex. (Internet Movie Database, Metacritic) rating from omdbapi (default: Rotten Tomatoes)
         '''
         if property_name == "Ratings":
-            self._print_rating_information(*rating_names)
+            if rating_names:
+                self._print_rating_information(*rating_names)
+            else:
+                self._print_rating_information()
         else:
             self._print_property(property_name)
     
