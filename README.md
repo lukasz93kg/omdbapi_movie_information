@@ -14,7 +14,7 @@ Script printing Rotten Tomatoes rating and movie title
 # REQUIREMENTS:
   1. Installed docker
      Script was tested on: Docker version 20.10.7, build 20.10.7-0ubuntu5~21.04.2
-  2. Permission to running docker containers on machine
+  2. Permission to running docker conteiners and building docker images on machine
 
 # Building and running the application
   1. Build docker image:
